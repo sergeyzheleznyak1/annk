@@ -1,0 +1,8 @@
+.hero {
+    padding-block: var(--section-padding-y);
+
+    &__img-wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

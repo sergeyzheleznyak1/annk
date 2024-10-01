@@ -1,0 +1,16 @@
+.fade {
+    position: absolute;
+    inset: 0;
+    background: rgb(188 188 188 / 60%);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    z-index: 9998;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transition-duration) ease-in-out;
+
+    &.active {
+        opacity: 1;
+        pointer-events: all;
+    }
+}

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ANNK</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/main.css" />
+
+	<link rel="icon" type="image/x-icon" href="./img/favicons/favicon.svg">
+	<link rel="apple-touch-icon" sizes="180x180" href="./img/favicons/apple-touch-icon.png">
+</head>
+<body>
+    <header class="header">
+        <div class="header__inner container">
+            <nav class="header__menu hidden-mobile">
+                <ul class="header__menu-list">
+                    <li class="header__menu-item">
+                        <a href="#!" class="header__menu-link">About us</a>
+                    </li>
+                    <li class="header__menu-item">
+                        <a href="#!" class="header__menu-link">Gallery</a>
+                    </li>
+                    <li class="header__menu-item">
+                        <a href="#!" class="header__menu-link">Contacts</a>
+                    </li>
+                    <li class="header__menu-item has-submenu">
+                        <a href="#!" class="header__menu-link">Shop</a>
+                        <ul class="header__menu-submenu">
+                            <li class="header__menu-submenu-item">
+                                <a href="#!" class="header__menu-submenu-link">All</a>
+                            </li>
+                            <li class="header__menu-submenu-item">
+                                <a href="#!" class="header__menu-submenu-link">New</a>
+                            </li>
+                            <li class="header__menu-submenu-item">
+                                <a href="#!" class="header__menu-submenu-link">Bestsellers</a>
+                            </li>
+                            <li class="header__menu-submenu-item">
+                                <a href="#!" class="header__menu-submenu-link">Heels</a>
+                            </li>
+                            <li class="header__menu-submenu-item">
+                                <a href="#!" class="header__menu-submenu-link">Mules</a>
+                            </li>
+                            <li class="header__menu-submenu-item">
+                                <a href="#!" class="header__menu-submenu-link">Boots</a>
+                            </li>
+                            <li class="header__menu-submenu-item">
+                                <a href="#!" class="header__menu-submenu-link">Fur heels</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <a href="#!" class="header__logo">/aenk:ei/</a>
+            <div class="header__language-cart">
+                <nav class="header__language hidden-mobile has-submenu">
+                    <button class="header__language-button" aria-haspopup="listbox" aria-expanded="false">EN</button>
+                    <ul class="header__language-list ">
+                        <li class="header__language-item" role="option" tabindex="0" data-lang="pl">
+                            <a rel="alternate" href="#" hreflang="pl" lang="pl" class="header__language-link" >PL</a>
+                        </li>
+                        <li class="header__language-item" role="option" tabindex="0" data-lang="de">
+                            <a rel="alternate" href="#" hreflang="de" lang="de" class="header__language-link">DE</a>
+                        </li>
+                        
+                    </ul>
+                </nav>
+                <button class="header__cart">
+                    <span class="visually-hidden">Open cart</span>
+                    <img src="img/icons/shopping-bag.svg" alt="">
+                </button>
+            </div>
+        </div>
+    </header>
+    <main>
+        <!-- На странице обязательно должен быть заголовок первого уровня. Если по дизайну его нет. Скрываем его на странице и указываем суть сайта. Нужно для сео продвижения, а так же для пользователей скрин ридеров -->
+        <h1 class="visually-hidden">ANNK</h1>
+        <section class="catalog container">
+            <header class="catalog__header">
+                <form class="catalog__filter filter">
+                    <header class="filter__header">
+                        <button class="filter__toggle" type="button">Filter</button>
+                    </header>
+                    <div class="filter__content">
+                        <div class="filter__availability">
+                            <h3 class="filter__title">Availability</h3>
+                            <fieldset class="filter__availability-radios radios">
+                                <label class="radios__item radio">
+                                    <input type="radio" name="availability" value="in-stock" checked class="radio__input visually-hidden">
+                                    <span class="radio__emulator"></span>
+                                    <span class="radio__label">In stock</span>
+                                </label>
+                                <label class="radios__item radio">
+                                    <input type="radio" name="availability" value="out-of-stock" class="radio__input visually-hidden">
+                                    <span class="radio__emulator"></span>
+                                    <span class="radio__label">Out of stock</span>
+                                </label>
+                            </fieldset>
+                        </div>
+                        <div class="filter__price">
+                            <h3 class="filter__title">Price</h3>
+                            <input type="range" id="price-range" min="0" max="10000" step="100" value="5000">
+                            <fieldset class="filter__price-range">
+                                <input type="text" id="min-price" value="0" readonly>
+                                <span>–</span>
+                                <input type="text" id="max-price" value="5600" readonly>
+                            </fieldset>
+                        </div>
+                    </div>
+                </form>
+                <div class="catalog__sort">Sort</div>
+            </header>
+            
+        </section>
+    </main>
+    <div class="bag">
+        <header class="bag__header">
+            <div class="bag__close-wrapper">
+                <button class="bag__close">
+                    <img src="img/icons/close.svg" alt="" class="bag__close-icon">
+                </button>
+            </div>
+            <h3 class="bag__title">Bag</h3>
+        </header>
+        <div class="bag__content"></div>
+        <footer class="bag__footer"></footer>
+    </div>
+    <div class="fade"></div>
+    <script src="js/index.js" type="module"></script>
+</body>
+</html>

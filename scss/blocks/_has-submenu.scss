@@ -1,0 +1,63 @@
+.has-submenu {
+    --opacity: 0;
+    --visibility: hidden;
+    --translateX: translateX(-1rem);
+    --display: none;
+    --rotate: 0;
+    --pointer-events: none;
+
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 10px;
+    cursor: pointer;
+
+    @include hover {
+        --opacity: 1;
+        --visibility: visible;
+        --translateX: translateX(0);
+        --pointer-events: all;
+        --rotate: 180deg;
+
+    }
+
+    &::after {
+        content: '';
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 10px;
+        aspect-ratio: 1;
+        background: url('../../img/icons/arrow-down.svg') center/contain no-repeat;
+        rotate: var(--rotate);
+    }
+
+    ul {
+        position: absolute;
+        top: 100%;
+        background-color: #fafafa;
+        border-radius: 3px;
+        opacity: var(--opacity);
+        visibility: var(--visibility);
+        transform: var(--translateX);
+        pointer-events: var(--pointer-events);
+        transition-property: opacity, visibility, transform, rotate;
+        z-index: 200;
+    }
+
+    ul a {
+        @include hover {
+            background-color: #dfdfdf;
+        }
+    }
+
+    &::after,
+    & ul,
+    & ul a,
+    & ul a::after{
+        transition-duration: var(--transition-duration);
+        transition-timing-function: ease-in-out;
+    }
+    
+}

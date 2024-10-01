@@ -1,0 +1,11 @@
+.catalog {
+    padding-block: var(--section-padding-y);
+
+    &__header {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        column-gap: 30px;
+    }
+}

@@ -1,0 +1,66 @@
+.bag {
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100%;
+    min-height: 100lvh;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(100%);
+    transition: transform cubic-bezier(0, 0.01, 0.18, 1) var(--transition-duration), visibility var(--transition-duration) cubic-bezier(0, 0.01, 0.18, 1), opacity cubic-bezier(0, 0.01, 0.18, 1) var(--transition-duration);
+    background-color: #fafafa;
+    z-index: 9999;
+
+    &.active {
+        visibility: visible;
+        opacity: 1;
+        pointer-events: all;
+        transform: translateX(0);
+    }
+
+    &__header,
+    &__content {
+        padding: 2rem;
+    }
+
+    &__header {
+        z-index: 100;
+    }
+
+    &__close-wrapper {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    &__close {
+        @include square(30px);
+        @include flex-center;
+
+        transition: rotate cubic-bezier(0, 0.01, 0.18, 1) var(--transition-duration);
+        
+        @include hover {
+            rotate: 360deg;
+        }
+
+        &-icon {
+            @include square(18px);
+        }
+    }
+
+    &__title {
+        font-size: 20px;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        gap: 20px;
+        overflow-y: auto;
+        z-index: 50;
+    }
+}
