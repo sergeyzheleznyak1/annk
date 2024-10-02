@@ -43,11 +43,11 @@
         transition: rotate cubic-bezier(0, 0.01, 0.18, 1) var(--transition-duration);
         
         @include hover {
-            rotate: 360deg;
+            rotate: 270deg;
         }
 
         &-icon {
-            @include square(18px);
+            @include square(20px);
         }
     }
 

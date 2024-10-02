@@ -6,6 +6,14 @@
 	width: 100%;
 }
 
+.container-mini {
+	margin: 0 auto;
+	padding: 0 var(--container-padding-x);
+
+	max-width: var(--container-mini-width);
+	width: 100%;
+}
+
 .container-full {
 	padding: 0 var(--container-padding-x);
 	max-width: 100%;

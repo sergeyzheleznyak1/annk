@@ -1,28 +1,68 @@
 .filter {
-    
+    --rotate: 0deg;
+
     &__content {
-        padding: 30px var(--container-padding-x);
+        padding: 20px var(--container-padding-x);
         position: absolute;
         left: 0;
         right: 0;
         width: 100%;
         display: flex;
-        column-gap: 60px;
+        flex-direction: column;
         background-color: #fafafa;
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-20%);
+        transition: transform cubic-bezier(0, 0.01, 0.18, 1) var(--transition-duration), visibility var(--transition-duration) cubic-bezier(0, 0.01, 0.18, 1), opacity cubic-bezier(0, 0.01, 0.18, 1) var(--transition-duration);
         z-index: 100;
+
+        &.active {
+            visibility: visible;
+            opacity: 1;
+            pointer-events: all;
+            transform: translateY(0);
+        }
+
+        &-inner {
+            display: flex;
+            column-gap: 75px;
+        }
+
+        &-close-wrapper {
+            display: flex;
+            justify-content: end;
+        }
+
+        &-close-button {
+            @include flex-center;
+            @include square(40px);
+            
+            transition: rotate cubic-bezier(0, 0.01, 0.18, 1) var(--transition-duration);
+
+            @include hover {
+                rotate: 270deg;
+            }
+        }
+
+        &-close-icon {
+            @include square(20px);
+        }
     }
 
     &__toggle {
-        --rotate: 0;
-
         display: flex;
         justify-content: flex-start;
         align-items: center;
         column-gap: 10px;
         height: var(--button-height);
 
-        @include hover {
+        &.active {
             --rotate: 180deg;
+        }
+
+        @include hover {
+            opacity: .7;
         }
 
         &::after {
@@ -40,7 +80,8 @@
 
     &__title {
         &:not(:last-child) {
-            margin-bottom: 30px;
+            font-size: 18px;
+            margin-bottom: 24px;
         }
     }
 
@@ -48,5 +89,112 @@
         display: flex;
         flex-direction: column;
         row-gap: 10px;
+    }
+
+    &__price {
+        &-inner {
+            display: flex;
+            flex-direction: column;
+            row-gap: 20px;
+        }
+        &-item {
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+            max-width: 92px;
+        }
+        &-input {
+            border: 1px solid #000;
+            border-radius: 3px;
+            padding: 15px 10px;
+            -moz-appearance: textfield;
+
+            &:focus {
+                outline: none;
+            }
+
+            &::-webkit-inner-spin-button,
+            &::-webkit-outer-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+
+            &-wrapper {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+        }
+        &-track {
+            position: absolute;
+            inset: 0;
+            height: 1px;
+            background-color: #000;
+        }
+        &-range {
+            position: relative;
+            width: 14rem;
+            height: 1px;
+
+            input[type="range"] {
+                position: absolute;
+                appearance: none;
+                width: 100%;
+                height: 100%;
+                background-color: transparent;
+                pointer-events: none;
+                z-index: 100;
+
+                &:focus {
+                    outline: none;
+                }
+
+                &::-webkit-slider-thumb {
+                    appearance: none;
+                    width: 1rem;
+                    aspect-ratio: 1;
+                    pointer-events: all;
+                    background-color: #fafafa;
+                    border: 1px solid #000;
+                    border-radius: 50%;
+                    cursor: pointer;
+                }
+
+                &::-moz-slider-thumb {
+                    appearance: none;
+                    width: 1rem;
+                    aspect-ratio: 1;
+                    pointer-events: all;
+                    background-color: #fafafa;
+                    border: 1px solid #000;
+                    border-radius: 50%;
+                    cursor: pointer;
+                }
+
+                &::-ms-slider-thumb {
+                    appearance: none;
+                    width: 1rem;
+                    aspect-ratio: 1;
+                    pointer-events: all;
+                    background-color: #fafafa;
+                    border: 1px solid #000;
+                    border-radius: 50%;
+                    cursor: pointer;
+                }
+
+                &::-ms-track {
+                    width: 100%;
+                    cursor: pointer;
+                    background-color: transparent;
+                    border-color: transparent;
+                    color: transparent;
+                }
+
+                &::-moz-focus-outer {
+                    border: 0;
+                }
+            }
+            
+        }
     }
 }

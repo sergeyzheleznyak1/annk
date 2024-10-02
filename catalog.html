@@ -77,7 +77,6 @@
         </div>
     </header>
     <main>
-        <!-- На странице обязательно должен быть заголовок первого уровня. Если по дизайну его нет. Скрываем его на странице и указываем суть сайта. Нужно для сео продвижения, а так же для пользователей скрин ридеров -->
         <h1 class="visually-hidden">ANNK</h1>
         <section class="catalog container">
             <header class="catalog__header">
@@ -86,35 +85,102 @@
                         <button class="filter__toggle" type="button">Filter</button>
                     </header>
                     <div class="filter__content">
-                        <div class="filter__availability">
-                            <h3 class="filter__title">Availability</h3>
-                            <fieldset class="filter__availability-radios radios">
-                                <label class="radios__item radio">
-                                    <input type="radio" name="availability" value="in-stock" checked class="radio__input visually-hidden">
-                                    <span class="radio__emulator"></span>
-                                    <span class="radio__label">In stock</span>
-                                </label>
-                                <label class="radios__item radio">
-                                    <input type="radio" name="availability" value="out-of-stock" class="radio__input visually-hidden">
-                                    <span class="radio__emulator"></span>
-                                    <span class="radio__label">Out of stock</span>
-                                </label>
-                            </fieldset>
+                        <div class="filter__content-close-wrapper">
+                            <button class="filter__content-close-button" type="button">
+                                <img src="img/icons/close.svg" alt="" class="filter__content-close-icon">
+                            </button>
                         </div>
-                        <div class="filter__price">
-                            <h3 class="filter__title">Price</h3>
-                            <input type="range" id="price-range" min="0" max="10000" step="100" value="5000">
-                            <fieldset class="filter__price-range">
-                                <input type="text" id="min-price" value="0" readonly>
-                                <span>–</span>
-                                <input type="text" id="max-price" value="5600" readonly>
-                            </fieldset>
+                        <div class="filter__content-inner">
+                            <div class="filter__availability">
+                                <h3 class="filter__title">Availability</h3>
+                                <fieldset class="filter__availability-radios radios">
+                                    <legend class="visually-hidden">Availability</legend>
+                                    <label class="radios__item radio">
+                                        <input type="radio" name="availability" value="in-stock" checked class="radio__input visually-hidden">
+                                        <span class="radio__emulator"></span>
+                                        <span class="radio__label">In stock</span>
+                                    </label>
+                                    <label class="radios__item radio">
+                                        <input type="radio" name="availability" value="out-of-stock" class="radio__input visually-hidden">
+                                        <span class="radio__emulator"></span>
+                                        <span class="radio__label">Out of stock</span>
+                                    </label>
+                                </fieldset>
+                            </div>
+                            <div class="filter__price">
+                                <h3 class="filter__title">Price</h3>
+                                <div class="filter__price-inner">
+                                    <div class="filter__price-range">
+                                        <input type="range" id="input-left" min="0" max="10000" step="100" value="0"> 
+                                        <input type="range" id="input-right" min="0" max="10000" step="100" value="10000"> 
+                                        <div class="filter__price-track"></div>
+                                    </div>
+                                    
+                                    <fieldset class="filter__price-input-wrapper">
+                                        <legend class="visually-hidden">Price</legend>
+                                        <div class="filter__price-item">
+                                            <label for="min-price" class="filter__price-label visually-hidden">From</label>
+                                            <input type="number" id="min-price" size="5" placeholder="€ From" class="filter__price-input" inputmode="numeric">
+                                        </div>
+                                        <span>–</span>
+                                        <div class="filter__price-item">
+                                            <label for="max-price" class="filter__price-label visually-hidden">To</label>
+                                            <input type="number" id="max-price" size="5" placeholder="€ To" class="filter__price-input" inputmode="numeric">
+                                        </div>
+                                        
+                                    </fieldset>
+                                </div>
+                            </div>
                         </div>
+                        
                     </div>
                 </form>
-                <div class="catalog__sort">Sort</div>
+                <!-- <form class="catalog__sort sort">
+                    <header class="sort__header"></header>
+                        <button class="sort__toggle" type="button">Sort</button>
+                    </header>
+                </form> -->
             </header>
-            
+            <div class="catalog__body container-mini">
+                <ul class="catalog__body-list grid">
+                    <li class="catalog__body-item">
+                        <article class="product-card">
+                            <div class="product-card__imgs">
+                                <img src="img/product/1.webp" alt="" class="product-card__img">
+                                <img src="img/product/2.webp" alt="" class="product-card__img">
+                            </div>
+                            <div class="product-card__body">
+                                <h3 class="product-card__title">Sandales</h3>
+                                <div class="product-card__price">2000 €</div>
+                            </div>
+                        </article>
+                    </li>
+                    <li class="catalog__body-item">
+                        <article class="product-card">
+                            <div class="product-card__imgs">
+                                <img src="img/product/1.webp" alt="" class="product-card__img">
+                                <img src="img/product/2.webp" alt="" class="product-card__img">
+                            </div>
+                            <div class="product-card__body">
+                                <h3 class="product-card__title">Sandales</h3>
+                                <div class="product-card__price">2000 €</div>
+                            </div>
+                        </article>
+                    </li>
+                    <li class="catalog__body-item">
+                        <article class="product-card">
+                            <div class="product-card__imgs">
+                                <img src="img/product/1.webp" alt="" class="product-card__img">
+                                <img src="img/product/2.webp" alt="" class="product-card__img">
+                            </div>
+                            <div class="product-card__body">
+                                <h3 class="product-card__title">Sandales</h3>
+                                <div class="product-card__price">2000 €</div>
+                            </div>
+                        </article>
+                    </li>
+                </ul>
+            </div>
         </section>
     </main>
     <div class="bag">

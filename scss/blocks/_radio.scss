@@ -4,33 +4,39 @@
     column-gap: 14px;
 
     &__label {
+        color: #727272;
         transition-duration: var(--transition-duration);
-        @include hover {
-            opacity: 0.7;
-        }
+        
+        // @include hover {
+        //     opacity: 0.7;
+        // }
     }
 
     &__input {
         &:not(:checked) + .radio__emulator::after  {
             opacity: 0;
         }
+
+        &:checked + .radio__emulator + .radio__label {
+            color: #000;
+        }
     }
 
     &__emulator {
         @include flex-center;
-        @include square(28px);
+        @include square(10px);
 
         position: relative;
-        background-color: #fff;
+        background-color: transparent;
         border: 1px solid #000;
         border-radius: 50%;
 
         &::after {
             @include abs-center;
-            @include square(60%);
+            @include square(100%);
 
             content: '';
-            background-color: red;
+            background-color: #000;
             border-radius: inherit;
             transition-duration: var(--transition-duration);
         }

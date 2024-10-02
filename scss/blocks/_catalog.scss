@@ -4,8 +4,14 @@
     &__header {
         position: relative;
         display: flex;
-        justify-content: space-between;
+        justify-content: start;
         align-items: center;
         column-gap: 30px;
+    }
+
+    &__body {
+        &-list {
+            --grid-columns: 3;
+        }
     }
 }

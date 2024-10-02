@@ -89,6 +89,7 @@ legend {
 
 :root {
   --container-width: 1280px;
+  --container-mini-width: 1023px;
   --container-padding-x: 20px;
   --section-padding-y: 10px;
   --button-height: 48px;
@@ -146,6 +147,13 @@ svg * {
   width: 100%;
 }
 
+.container-mini {
+  margin: 0 auto;
+  padding: 0 var(--container-padding-x);
+  max-width: var(--container-mini-width);
+  width: 100%;
+}
+
 .container-full {
   padding: 0 var(--container-padding-x);
   max-width: 100%;
@@ -197,6 +205,13 @@ html, body {
 }
 
 /* Blocks */
+.grid {
+  --grid-columns: 1;
+  display: grid;
+  grid-template-columns: repeat(var(--grid-columns), 1fr);
+  gap: 40px;
+}
+
 .has-submenu {
   --opacity: 0;
   --visibility: hidden;
@@ -367,16 +382,16 @@ html, body {
 }
 @media (hover: hover) and (pointer: fine) {
   .bag__close:hover {
-    rotate: 360deg;
+    rotate: 270deg;
   }
 }
 @media (hover: none) {
   .bag__close:active {
-    rotate: 360deg;
+    rotate: 270deg;
   }
 }
 .bag__close-icon {
-  width: 18px;
+  width: 20px;
   aspect-ratio: 1;
 }
 .bag__title {
@@ -410,21 +425,15 @@ html, body {
           column-gap: 14px;
 }
 .radio__label {
+  color: #727272;
   -webkit-transition-duration: var(--transition-duration);
           transition-duration: var(--transition-duration);
 }
-@media (hover: hover) and (pointer: fine) {
-  .radio__label:hover {
-    opacity: 0.7;
-  }
-}
-@media (hover: none) {
-  .radio__label:active {
-    opacity: 0.7;
-  }
-}
 .radio__input:not(:checked) + .radio__emulator::after {
   opacity: 0;
+}
+.radio__input:checked + .radio__emulator + .radio__label {
+  color: #000;
 }
 .radio__emulator {
   display: -webkit-box;
@@ -436,10 +445,10 @@ html, body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 28px;
+  width: 10px;
   aspect-ratio: 1;
   position: relative;
-  background-color: #fff;
+  background-color: transparent;
   border: 1px solid #000;
   border-radius: 50%;
 }
@@ -448,10 +457,10 @@ html, body {
   top: 50%;
   left: 50%;
   translate: -50% -50%;
-  width: 60%;
+  width: 100%;
   aspect-ratio: 1;
   content: "";
-  background-color: red;
+  background-color: #000;
   border-radius: inherit;
   -webkit-transition-duration: var(--transition-duration);
           transition-duration: var(--transition-duration);
@@ -586,9 +595,9 @@ html, body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -596,9 +605,15 @@ html, body {
      -moz-column-gap: 30px;
           column-gap: 30px;
 }
+.catalog__body-list {
+  --grid-columns: 3;
+}
 
+.filter {
+  --rotate: 0deg;
+}
 .filter__content {
-  padding: 30px var(--container-padding-x);
+  padding: 20px var(--container-padding-x);
   position: absolute;
   left: 0;
   right: 0;
@@ -606,14 +621,75 @@ html, body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-column-gap: 60px;
-     -moz-column-gap: 60px;
-          column-gap: 60px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   background-color: #fafafa;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transform: translateY(-20%);
+          transform: translateY(-20%);
+  -webkit-transition: visibility var(--transition-duration) cubic-bezier(0, 0.01, 0.18, 1), opacity cubic-bezier(0, 0.01, 0.18, 1) var(--transition-duration), -webkit-transform cubic-bezier(0, 0.01, 0.18, 1) var(--transition-duration);
+  transition: visibility var(--transition-duration) cubic-bezier(0, 0.01, 0.18, 1), opacity cubic-bezier(0, 0.01, 0.18, 1) var(--transition-duration), -webkit-transform cubic-bezier(0, 0.01, 0.18, 1) var(--transition-duration);
+  transition: transform cubic-bezier(0, 0.01, 0.18, 1) var(--transition-duration), visibility var(--transition-duration) cubic-bezier(0, 0.01, 0.18, 1), opacity cubic-bezier(0, 0.01, 0.18, 1) var(--transition-duration);
+  transition: transform cubic-bezier(0, 0.01, 0.18, 1) var(--transition-duration), visibility var(--transition-duration) cubic-bezier(0, 0.01, 0.18, 1), opacity cubic-bezier(0, 0.01, 0.18, 1) var(--transition-duration), -webkit-transform cubic-bezier(0, 0.01, 0.18, 1) var(--transition-duration);
   z-index: 100;
 }
+.filter__content.active {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: all;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+.filter__content-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 75px;
+     -moz-column-gap: 75px;
+          column-gap: 75px;
+}
+.filter__content-close-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+.filter__content-close-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 40px;
+  aspect-ratio: 1;
+  -webkit-transition: rotate cubic-bezier(0, 0.01, 0.18, 1) var(--transition-duration);
+  transition: rotate cubic-bezier(0, 0.01, 0.18, 1) var(--transition-duration);
+}
+@media (hover: hover) and (pointer: fine) {
+  .filter__content-close-button:hover {
+    rotate: 270deg;
+  }
+}
+@media (hover: none) {
+  .filter__content-close-button:active {
+    rotate: 270deg;
+  }
+}
+.filter__content-close-icon {
+  width: 20px;
+  aspect-ratio: 1;
+}
 .filter__toggle {
-  --rotate: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -628,14 +704,17 @@ html, body {
           column-gap: 10px;
   height: var(--button-height);
 }
+.filter__toggle.active {
+  --rotate: 180deg;
+}
 @media (hover: hover) and (pointer: fine) {
   .filter__toggle:hover {
-    --rotate: 180deg;
+    opacity: 0.7;
   }
 }
 @media (hover: none) {
   .filter__toggle:active {
-    --rotate: 180deg;
+    opacity: 0.7;
   }
 }
 .filter__toggle::after {
@@ -657,7 +736,8 @@ html, body {
   rotate: var(--rotate);
 }
 .filter__title:not(:last-child) {
-  margin-bottom: 30px;
+  font-size: 18px;
+  margin-bottom: 24px;
 }
 .filter__availability-radios {
   display: -webkit-box;
@@ -668,4 +748,156 @@ html, body {
       -ms-flex-direction: column;
           flex-direction: column;
   row-gap: 10px;
+}
+.filter__price-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 20px;
+}
+.filter__price-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 10px;
+  max-width: 92px;
+}
+.filter__price-input {
+  border: 1px solid #000;
+  border-radius: 3px;
+  padding: 15px 10px;
+  -moz-appearance: textfield;
+}
+.filter__price-input:focus {
+  outline: none;
+}
+.filter__price-input::-webkit-inner-spin-button, .filter__price-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.filter__price-input-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.filter__price-track {
+  position: absolute;
+  inset: 0;
+  height: 1px;
+  background-color: #000;
+}
+.filter__price-range {
+  position: relative;
+  width: 14rem;
+  height: 1px;
+}
+.filter__price-range input[type=range] {
+  position: absolute;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  pointer-events: none;
+  z-index: 100;
+}
+.filter__price-range input[type=range]:focus {
+  outline: none;
+}
+.filter__price-range input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+          appearance: none;
+  width: 1rem;
+  aspect-ratio: 1;
+  pointer-events: all;
+  background-color: #fafafa;
+  border: 1px solid #000;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.filter__price-range input[type=range]::-moz-slider-thumb {
+  -moz-appearance: none;
+       appearance: none;
+  width: 1rem;
+  aspect-ratio: 1;
+  pointer-events: all;
+  background-color: #fafafa;
+  border: 1px solid #000;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.filter__price-range input[type=range]::-ms-slider-thumb {
+  appearance: none;
+  width: 1rem;
+  aspect-ratio: 1;
+  pointer-events: all;
+  background-color: #fafafa;
+  border: 1px solid #000;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.filter__price-range input[type=range]::-ms-track {
+  width: 100%;
+  cursor: pointer;
+  background-color: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+.filter__price-range input[type=range]::-moz-focus-outer {
+  border: 0;
+}
+
+.product-card {
+  --opacity: 0;
+  --visibility: hidden;
+  position: relative;
+  text-align: center;
+}
+@media (hover: hover) and (pointer: fine) {
+  .product-card:hover {
+    --opacity: 1;
+    --visibility: visible;
+  }
+}
+@media (hover: none) {
+  .product-card:active {
+    --opacity: 1;
+    --visibility: visible;
+  }
+}
+.product-card__imgs {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+.product-card__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  -webkit-transition: visibility var(--transition-duration) cubic-bezier(0, 0.01, 0.18, 1), opacity cubic-bezier(0, 0.01, 0.18, 1) var(--transition-duration);
+  transition: visibility var(--transition-duration) cubic-bezier(0, 0.01, 0.18, 1), opacity cubic-bezier(0, 0.01, 0.18, 1) var(--transition-duration);
+}
+.product-card__img:first-child {
+  z-index: 1;
+}
+.product-card__img:last-child {
+  opacity: var(--opacity);
+  visibility: var(--visibility);
+  z-index: 2;
 }/*# sourceMappingURL=main.css.map */
