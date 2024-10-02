@@ -7,11 +7,23 @@
         justify-content: start;
         align-items: center;
         column-gap: 30px;
+
+        @include mobile {
+            position: static;
+        }
     }
 
     &__body {
         &-list {
-            --grid-columns: 3;
+            --grid-columns: 4;
+
+            @include tablet-s {
+                --grid-columns: 2;
+            }
+
+            @include mobile {
+                --grid-columns: 1;
+            }
         }
     }
 }

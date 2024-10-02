@@ -7,16 +7,25 @@ export const filter = () => {
     const inputRight = document.getElementById('input-right');
     const minPrice = document.getElementById('min-price');
     const maxPrice = document.getElementById('max-price');
+    const body = document.body;
 
     
     function openFilter() {
         filterContent.classList.add('active');
         filterToggleButton.classList.add('active');
+
+        if (window.innerWidth <= 767) {
+            body.classList.add('no-scroll');
+        }
     }
 
     function closeFilter() {
         filterContent.classList.remove('active');
         filterToggleButton.classList.remove('active');
+
+        if (window.innerWidth <= 767) {
+            body.classList.remove('no-scroll');
+        }
     }
 
     function clickOutsideFilter(event) {

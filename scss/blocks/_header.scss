@@ -20,9 +20,18 @@
 
         font-weight: 500;
         font-size: 30px;
+
+        @include mobile {
+            font-size: 23px;
+        }
     }
 
     &__menu {
+
+        @include tablet-s {
+            display: none;
+        }
+
         &-list {
             display: flex;
             align-items: center;
@@ -75,5 +84,13 @@
     &__language-link {
         padding: 0 10px;
         width: 3rem;
+    }
+
+    &__burger-button {
+        display: none;
+
+        @include tablet-s {
+            display: block;
+        }
     }
 }

@@ -12,31 +12,24 @@
     }
 
     &__imgs {
-        position: relative;
-        width: 100%;
-        height: auto;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
     }
 
     &__img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
+        grid-column: 1 / -1;
+        grid-row: 1 / -1;
         transition: visibility var(--transition-duration) cubic-bezier(0, 0.01, 0.18, 1), opacity cubic-bezier(0, 0.01, 0.18, 1) var(--transition-duration);
-
-        &:first-child {
-            z-index: 1;
-        }
 
         &:last-child {
             opacity: var(--opacity);
             visibility: var(--visibility);
-            z-index: 2;
         } 
-
     }
 
-    &__body {
-        
+    &__link {
+        position: absolute;
+        inset: 0;
     }
 }

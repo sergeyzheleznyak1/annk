@@ -4,5 +4,9 @@
     &__img-wrapper {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+
+        @include mobile {
+            grid-template-columns: 1fr;
+        }
     }
 }

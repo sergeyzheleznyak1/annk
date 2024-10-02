@@ -10,6 +10,7 @@
         display: flex;
         flex-direction: column;
         background-color: #fafafa;
+        border-radius: 3px;
         visibility: hidden;
         opacity: 0;
         pointer-events: none;
@@ -17,16 +18,37 @@
         transition: transform cubic-bezier(0, 0.01, 0.18, 1) var(--transition-duration), visibility var(--transition-duration) cubic-bezier(0, 0.01, 0.18, 1), opacity cubic-bezier(0, 0.01, 0.18, 1) var(--transition-duration);
         z-index: 100;
 
+        @include mobile {
+            inset: 0;
+            width: 60%;
+            height: 100%;
+            transform: translateX(-100%);
+        }
+
+        @include mobile-s {
+            width: 80%;
+            height: 100%;
+        }
+
         &.active {
             visibility: visible;
             opacity: 1;
             pointer-events: all;
             transform: translateY(0);
+
+            @include mobile {
+                transform: translateX(0);
+            }
         }
 
         &-inner {
             display: flex;
             column-gap: 75px;
+
+            @include mobile {
+                flex-direction: column;
+                row-gap: 75px;
+            }
         }
 
         &-close-wrapper {
@@ -135,6 +157,10 @@
             position: relative;
             width: 14rem;
             height: 1px;
+
+            @include mobile {
+                width: 100%;
+            }
 
             input[type="range"] {
                 position: absolute;
