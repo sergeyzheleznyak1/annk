@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./css/main.css" />
 
 	<link rel="icon" type="image/x-icon" href="./img/favicons/favicon.svg">
@@ -80,15 +81,58 @@
         </div>
     </header>
     <main>
-        <h1 class="visually-hidden">ANNK</h1>
-        <section class="hero container">
-            <div class="hero__img-wrapper">
-                <img src="img/hero/1.webp" alt="" class="hero__img">
-                <img src="img/hero/2.webp" alt="" class="hero__img">
+        <section class="product container">
+            <div class="product__slider swiper">
+                <ul class="product__slider-list swiper-wrapper">
+                    <li class="product__slider-item swiper-slide">
+                        <img src="img/product/3.webp" alt="" class="product__slider-img">
+                    </li>
+                    <li class="product__slider-item swiper-slide">
+                        <img src="img/product/4.webp" alt="" class="product__slider-img">
+                    </li>
+                    <li class="product__slider-item swiper-slide">
+                        <img src="img/product/5.webp" alt="" class="product__slider-img">
+                    </li>
+                    <li class="product__slider-item swiper-slide">
+                        <img src="img/product/6.webp" alt="" class="product__slider-img">
+                    </li>
+                </ul>
+                <div class="product__action">
+                    <div class="swiper-pagination visible-mobile"></div>
+                    <div class="product__arrows">
+                        <button class="product__arrow-button-prev visible-mobile">
+                            <img src="img/icons/arrow-back.svg" alt="">
+                        </button>
+                        <button class="product__arrow-button-next visible-mobile">
+                            <img src="img/icons/arrow-forward.svg" alt="">
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="product__info">
+                <h1 class="product__title">DRESS PALERMO</h1>
+                <div class="product__price">168 €</div>
+                <div class="product__sizes">
+                    <div class="product__sizes-title">Sizes:</div>
+                    <div class="product__sizes-inner">
+                        <button class="product__size">XS</button>
+                        <button class="product__size">S</button>
+                        <button class="product__size">M</button>
+                        <button class="product__size">L</button>
+                        <button class="product__size">XL</button>
+                    </div>
+                </div>
+                <div class="product__quantity">
+                    <label for="quantity" class="product__quantity-label">Quantity:</label>
+                    <div class="product__quantity-inner">
+                        <button class="product__quantity-button"><img src="img/icons/remove.svg" alt="" class="product__quantity-icon"></button>
+                        <input type="number" class="product__quantity-input" id="quantity" name="quantity" value="1" min="1" step="1"/>
+                        <button class="product__quantity-button"><img src="img/icons/add.svg" alt="" class="product__quantity-icon"></button>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
-    <footer class="footer"></footer>
     <div class="bag">
         <header class="bag__header">
             <div class="bag__close-wrapper">
@@ -102,6 +146,8 @@
         <footer class="bag__footer"></footer>
     </div>
     <div class="fade"></div>
+    <script src="js/libs/swiper-bundle.min.js"></script>
     <script src="js/index.js" type="module"></script>
+    <script src="js/swiper.js"></script>
 </body>
 </html>

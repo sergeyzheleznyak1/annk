@@ -1,4 +1,4 @@
-export const filter = () => {
+document.addEventListener('DOMContentLoaded', () => {
     const filterToggleButton = document.querySelector('.filter__toggle');
     const filterContent = document.querySelector('.filter__content');
     const filterCloseButton = document.querySelector('.filter__content-close-button');
@@ -72,4 +72,4 @@ export const filter = () => {
         inputRight.value = value;
         maxPrice.value = value;
     });
-}
+});

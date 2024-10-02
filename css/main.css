@@ -344,6 +344,21 @@ html, body {
   background-color: #fafafa;
   z-index: 9999;
 }
+@media (max-width: 1023px) {
+  .bag {
+    width: 45%;
+  }
+}
+@media (max-width: 767px) {
+  .bag {
+    width: 50%;
+  }
+}
+@media (max-width: 480px) {
+  .bag {
+    width: 80%;
+  }
+}
 .bag.active {
   visibility: visible;
   opacity: 1;
@@ -411,6 +426,42 @@ html, body {
   gap: 20px;
   overflow-y: auto;
   z-index: 50;
+}
+
+.swiper {
+  --swiper-theme-color: #000
+  --swiper-pagination-bullet-inactive-color: var(--color-light);
+  --swiper-pagination-bullet-inactive-opacity: 1;
+  --swiper-pagination-bullet-size: 24px;
+}
+.swiper-pagination {
+  position: static !important;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: -webkit-fit-content !important;
+  width: -moz-fit-content !important;
+  width: fit-content !important;
+}
+.swiper-pagination-bullet {
+  margin: 0 !important;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: none !important;
+}
+.swiper-pagination-bullet-active {
+  background: none !important;
+  color: var(--color-accent);
 }
 
 .radio {
@@ -972,4 +1023,120 @@ html, body {
 .product-card__link {
   position: absolute;
   inset: 0;
+}
+
+.product {
+  padding-block: var(--section-padding-y);
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  overflow: hidden;
+}
+@media (max-width: 767px) {
+  .product {
+    grid-template-columns: 1fr;
+  }
+}
+.product__slider {
+  height: calc(100vh - 88px - var(--section-padding-y) * 2);
+  border-radius: 3px;
+  overflow-y: hidden;
+}
+@media (max-width: 767px) {
+  .product__slider {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+.product__price {
+  font-size: 20px;
+}
+.product__price:not(:last-child) {
+  margin-bottom: 20px;
+}
+.product__sizes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 10px;
+}
+.product__sizes:not(:last-child) {
+  margin-bottom: 20px;
+}
+.product__sizes-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 20px;
+     -moz-column-gap: 20px;
+          column-gap: 20px;
+}
+.product__size {
+  height: 40px;
+  aspect-ratio: 1;
+}
+.product__info {
+  padding-inline: var(--container-padding-x);
+}
+.product__title {
+  font-size: 35px;
+  font-weight: 500;
+}
+.product__title:not(:last-child) {
+  margin-bottom: 20px;
+}
+.product__quantity {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 10px;
+}
+.product__quantity:not(:last-child) {
+  margin-bottom: 20px;
+}
+.product__quantity-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 10px;
+     -moz-column-gap: 10px;
+          column-gap: 10px;
+}
+.product__quantity-input {
+  padding: 10px;
+  width: 100px;
+  -moz-appearance: textfield;
+}
+.product__quantity-input:focus {
+  outline: none;
+}
+.product__quantity-input::-webkit-inner-spin-button, .product__quantity-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.product__quantity__action {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }/*# sourceMappingURL=main.css.map */

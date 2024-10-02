@@ -15,6 +15,18 @@
     background-color: #fafafa;
     z-index: 9999;
 
+    @include tablet-b {
+        width: 45%;
+    }
+
+    @include mobile {
+        width: 50%;
+    }
+
+    @include mobile-s {
+        width: 80%;
+    }
+
     &.active {
         visibility: visible;
         opacity: 1;
