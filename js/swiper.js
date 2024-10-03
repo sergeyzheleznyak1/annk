@@ -1,21 +1,29 @@
 document.addEventListener('DOMContentLoaded', () => {
     const swiper = new Swiper('.swiper', {
         slidesPerView: "auto",
-        direction: "vertical",
-        freeMode: true,
-        mousewheel: {
-            releaseOnEdges: true,
-        },
+        // direction: "horizontal",
+        // freeMode: false,
+        mousewheel: true,
         loop: true,
         effect: "fade",
         pagination: {
             el: ".swiper-pagination",
             clickable: true,
+            type: "fraction",
         },
         navigation: {
             nextEl: ".product__arrow-button-next",
             prevEl: ".product__arrow-button-prev",
         },
+        // breakpoints: {
+        //     768: {
+        //         direction: "vertical",
+        //         // freeMode: true,
+        //         mousewheel: {
+        //             releaseOnEdges: true,
+        //         },
+        //     }
+        // }
         // effect: "creative",
         // creativeEffect: {
         //     prev: {

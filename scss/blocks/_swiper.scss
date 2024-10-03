@@ -1,6 +1,6 @@
 .swiper {
-    --swiper-theme-color: #000
-    --swiper-pagination-bullet-inactive-color: var(--color-light);
+    --swiper-theme-color: #000;
+    --swiper-pagination-bullet-inactive-color: #000;
     --swiper-pagination-bullet-inactive-opacity: 1;
     --swiper-pagination-bullet-size: 24px;
     
@@ -17,12 +17,13 @@
         display: flex!important;
         justify-content: center;
         align-items: center;
+        
 
-        background: none!important;
+        // background: none!important;
 
         &-active {
-            background: none!important;
-            color: var(--color-accent);
+            // background: none!important;
+            color: red;
         }
     }
     

@@ -1,62 +1,122 @@
 .product {
     padding-block: var(--section-padding-y);
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
 
     @include mobile {
-        grid-template-columns: 1fr;
-    }
+        flex-direction: column;
+    }  
 
     &__slider {
-        height: calc(100vh - 88px - var(--section-padding-y) * 2);
+        flex: 2;
+        height: calc(100vh - 88px);
         border-radius: 3px;
-        overflow-y: hidden;
 
         @include mobile {
+            flex: none;
+            width: 100%;
+            height: auto;
             display: flex;
             flex-direction: column;
         }
     }
 
-    &__price {
-        font-size: 20px; 
-
-        &:not(:last-child) {
-            margin-bottom: 20px;
-        }
-    }
-
-    &__sizes {
+    &__action {
         display: flex;
-        flex-direction: column;
-        row-gap: 10px;
-
-        &:not(:last-child) {
-            margin-bottom: 20px;
-        }
-
-        &-inner {
-            display: flex;
-            column-gap: 20px;
-        }
-    }
-
-    &__size {
-        height: 40px;
-        aspect-ratio: 1;
+        justify-content: space-between;
+        align-items: center;
     }
 
     &__info {
-        padding-inline: var(--container-padding-x);
-    }
+        padding-left: 40px;
+        flex: 1;
 
-    &__title {
-        font-size: 35px;
-        font-weight: 500;
+        display: flex;
+        flex-direction: column;
+        row-gap: 50px;
+
+        @include mobile {
+            flex: none;
+        }
 
         &:not(:last-child) {
-            margin-bottom: 20px;
+            margin-bottom: 42px;
+        }
+    }
+
+    &__details {
+        display: flex;
+        flex-direction: column;
+        row-gap: 8px;
+
+        span {
+            font-size: 14px;
+            color: #686363;
+        }
+    }
+    
+    &__title {
+        font-size: 36px;
+    }
+
+    &__price {
+        font-size: 20px;
+        color: #686363;
+    }
+
+    &__summary {
+        display: flex;
+        flex-direction: column;
+        row-gap: 37px;
+    }
+
+    &__descr {
+        line-height: 1.5;
+        color: #686363;
+    }
+
+    &__configuration-table {
+        display: flex;
+        flex-direction: column;
+        row-gap: 16px;
+    }
+
+    &__top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__select {
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &__size-link {
+        text-decoration: underline;
+
+        @include hover {
+            text-decoration: underline;
+        }
+    }
+
+    &__table {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        &-item {
+            padding: 20px;
+            border: 1px solid #EAECEC;
+        }
+
+        &-title {
+            font-size: 18px;
+        }
+
+        &-descr {
+            font-size: 12px;
         }
     }
 
@@ -65,39 +125,26 @@
         flex-direction: column;
         row-gap: 10px;
 
-        &:not(:last-child) {
-            margin-bottom: 20px;
-        }
-
         &-inner {
             display: flex;
             align-items: center;
             column-gap: 10px;
         }
 
-        &-input {
-            // padding: .5rem;
-            padding: 10px;
-            width: 100px;
-            // aspect-ratio: 1;
-            // border: 1px solid #000;
-            -moz-appearance: textfield;
+        &-button {
+            @include flex-center;
 
-            &:focus {
-                outline: none;
-            }
-
-            &::-webkit-inner-spin-button,
-            &::-webkit-outer-spin-button {
-                -webkit-appearance: none;
-                margin: 0;
-            }
+            height: 40px;
+            aspect-ratio: 1;
         }
+    }
 
-        &__action {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    &__button-bag {
+        padding: .95rem 1.45rem;
+        display: block;
+        color: #fff;
+        background-color: #272522;
+        border-radius: 3px;
+        text-align: center;
     }
 }
