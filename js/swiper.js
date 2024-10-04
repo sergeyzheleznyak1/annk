@@ -13,20 +13,19 @@ document.addEventListener('DOMContentLoaded', () => {
             nextEl: ".product__arrow-button-next",
             prevEl: ".product__arrow-button-prev",
         },
-        breakpoints: {
-            768: {
-                mousewheel: true
-            }
-        }
-        // effect: "creative",
-        // creativeEffect: {
-        //     prev: {
-        //       shadow: true,
-        //       translate: [0, 0, -400],
-        //     },
-        //     next: {
-        //       translate: [0, "100%", 0],
-        //     },
-        // },
     });
+
+    function updateMousewheel() {
+        if (window.innerWidth >= 768) {
+            swiper.params.mousewheel.enabled = true;
+            swiper.mousewheel.enable();
+        } else {
+            swiper.params.mousewheel.enabled = false;
+            swiper.mousewheel.disable();
+        }
+    }
+
+    updateMousewheel();
+
+    window.addEventListener('resize', updateMousewheel);
 });
