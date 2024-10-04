@@ -82,115 +82,174 @@
     </header>
     <main>
         <section class="product container">
-            <div class="product__slider swiper">
-                <ul class="product__slider-list swiper-wrapper">
-                    <li class="product__slider-item swiper-slide">
-                        <img src="img/product/3.webp" alt="" class="product__slider-img">
-                    </li>
-                    <li class="product__slider-item swiper-slide">
-                        <img src="img/product/4.webp" alt="" class="product__slider-img">
-                    </li>
-                    <li class="product__slider-item swiper-slide">
-                        <img src="img/product/5.webp" alt="" class="product__slider-img">
-                    </li>
-                    <li class="product__slider-item swiper-slide">
-                        <img src="img/product/6.webp" alt="" class="product__slider-img">
-                    </li>
-                </ul>
-                <div class="product__action visible-mobile">
-                    <div class="swiper-pagination"></div>
-                    <div class="product__arrows">
-                        <button class="product__arrow-button-prev product__arrow-button">
-                            <img src="img/icons/arrow-back.svg" alt="">
-                        </button>
-                        <button class="product__arrow-button-next product__arrow-button">
-                            <img src="img/icons/arrow-forward.svg" alt="">
-                        </button>
+            <div class="product__block">
+                <div class="product__slider swiper">
+                    <ul class="product__slider-list swiper-wrapper">
+                        <li class="product__slider-item swiper-slide">
+                            <img src="img/product/3.webp" alt="" class="product__slider-img">
+                        </li>
+                        <li class="product__slider-item swiper-slide">
+                            <img src="img/product/4.webp" alt="" class="product__slider-img">
+                        </li>
+                        <li class="product__slider-item swiper-slide">
+                            <img src="img/product/5.webp" alt="" class="product__slider-img">
+                        </li>
+                        <li class="product__slider-item swiper-slide">
+                            <img src="img/product/6.webp" alt="" class="product__slider-img">
+                        </li>
+                    </ul>
+                    <div class="product__action visible-mobile">
+                        <div class="swiper-pagination"></div>
+                        <div class="product__arrows">
+                            <button class="product__arrow-button-prev product__arrow-button">
+                                <img src="img/icons/arrow-back.svg" alt="">
+                            </button>
+                            <button class="product__arrow-button-next product__arrow-button">
+                                <img src="img/icons/arrow-forward.svg" alt="">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product__info">
+                    <div class="product__details">
+                        <h1 class="product__title">DRESS PALERMO</h1>
+                        <div class="product__price">€168*</div>
+                        <span>incl. local Tax & Shipping.</span>
+                    </div>
+    
+                    <div class="product__summary">
+                        <div class="product__descr">
+                            <p>Sleek and timeless. Titanium glasses with an innovative bridge. A frame to suit every face, Morgan is a classic ‘panto’ shape.</p>
+                        </div>
+        
+                        <div class="product__configuration-table">
+                            <div class="product__top">
+                                <div class="product-configuration">
+                                    <label for="size-select">Select Size:</label>
+                                    <select id="size-select" name="size" class="product__select">
+                                        <option value="36">36 (EU)</option>
+                                        <option value="37">37 (EU)</option>
+                                        <option value="38">38 (EU)</option>
+                                        <option value="39">39 (EU)</option>
+                                        <option value="40">40 (EU)</option>
+                                        <option value="41">41 (EU)</option>
+                                        <option value="42">42 (EU)</option>
+                                    </select>
+                                </div>
+                                <!-- Например всплытие модалки по клику с размерами если нужно -->
+                                <a href="#!" class="product__size-link">Size guide</a>
+                            </div>
+                            <div class="product__bottom">
+                                <div class="product__table">
+                                    <div class="product__table-item">
+                                        <div class="product__table-title">Made in</div>
+                                        <div class="product__table-descr">Sabae, Japan</div>
+                                    </div>
+                                    <div class="product__table-item">
+                                        <div class="product__table-title">Made in</div>
+                                        <div class="product__table-descr">Sabae, Japan</div>
+                                    </div>
+                                    <div class="product__table-item">
+                                        <div class="product__table-title">Made in</div>
+                                        <div class="product__table-descr">Sabae, Japan</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="product__quantity">
+                            <div class="product__quantity-label">Quantity:</div>
+                            <div class="product__quantity-inner">
+                                <button class="product__quantity-button"><img src="img/icons/remove.svg" alt="" class="product__quantity-icon"></button>
+                                <!-- Если нужно редактировать количество заменить span на input [type: number] -->
+                                <span class="product__quantity-count">1</span>
+                                <button class="product__quantity-button"><img src="img/icons/add.svg" alt="" class="product__quantity-icon"></button>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <a href="#!" class="product__button-bag">Add to cart</a>
+    
+                    <div class="product__specifications">
+                        <ul class="product__specifications-list">
+                            <li class="product__specifications-item">
+                                Perfect mob wife midi dress with leg slit and open back.
+                            </li>
+                            <li class="product__specifications-item">
+                                Stretchy lace.
+                            </li>
+                            <li class="product__specifications-item">
+                                Pull on styling.
+                            </li>
+                            <li class="product__specifications-item">
+                                Comes double lined.
+                            </li>
+                            <li class="product__specifications-item">
+                                Material: 95% polyester, 5% elastane
+                            </li>
+                            <li class="product__specifications-item">
+                                Machine wash, no warmer than 30°C
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
-            <div class="product__info">
-                <div class="product__details">
-                    <h1 class="product__title">DRESS PALERMO</h1>
-                    <div class="product__price">€168*</div>
-                    <span>incl. local Tax & Shipping.</span>
-                </div>
-
-                <div class="product__summary">
-                    <div class="product__descr">
-                        <p>Sleek and timeless. Titanium glasses with an innovative bridge. A frame to suit every face, Morgan is a classic ‘panto’ shape.</p>
-                    </div>
-    
-                    <div class="product__configuration-table">
-                        <div class="product__top">
-                            <div class="product-configuration">
-                                <label for="size-select">Select Size:</label>
-                                <select id="size-select" name="size" class="product__select">
-                                    <option value="36">36 (EU)</option>
-                                    <option value="37">37 (EU)</option>
-                                    <option value="38">38 (EU)</option>
-                                    <option value="39">39 (EU)</option>
-                                    <option value="40">40 (EU)</option>
-                                    <option value="41">41 (EU)</option>
-                                    <option value="42">42 (EU)</option>
-                                </select>
+            <div class="product__recommend">
+                <h2 class="product__recommend-title">You may also like</h2>
+                <ul class="product__recommend-list">
+                    <li class="product__recommend-item">
+                        <article class="product-card">
+                            <div class="product-card__imgs">
+                                <img src="img/product/1.webp" alt="" class="product-card__img">
+                                <img src="img/product/2.webp" alt="" class="product-card__img">
                             </div>
-                            <!-- Например всплытие модалки по клику с размерами если нужно -->
-                            <a href="#!" class="product__size-link">Size guide</a>
-                        </div>
-                        <div class="product__bottom">
-                            <div class="product__table">
-                                <div class="product__table-item">
-                                    <div class="product__table-title">Made in</div>
-                                    <div class="product__table-descr">Sabae, Japan</div>
-                                </div>
-                                <div class="product__table-item">
-                                    <div class="product__table-title">Made in</div>
-                                    <div class="product__table-descr">Sabae, Japan</div>
-                                </div>
-                                <div class="product__table-item">
-                                    <div class="product__table-title">Made in</div>
-                                    <div class="product__table-descr">Sabae, Japan</div>
-                                </div>
+                            <div class="product-card__body">
+                                <h3 class="product-card__title">Sandales</h3>
+                                <div class="product-card__price">2000 €</div>
                             </div>
-                        </div>
-                    </div>
-                    
-                    <div class="product__quantity">
-                        <div class="product__quantity-label">Quantity:</div>
-                        <div class="product__quantity-inner">
-                            <button class="product__quantity-button"><img src="img/icons/remove.svg" alt="" class="product__quantity-icon"></button>
-                            <!-- Если нужно редактировать количество заменить span на input [type: number] -->
-                            <span class="product__quantity-count">1</span>
-                            <button class="product__quantity-button"><img src="img/icons/add.svg" alt="" class="product__quantity-icon"></button>
-                        </div>
-                    </div>
-                </div>
-
-                <a href="#!" class="product__button-bag">Add to cart</a>
-
-                <div class="product__specifications">
-                    <ul class="product__specifications-list">
-                        <li class="product__specifications-item">
-                            Perfect mob wife midi dress with leg slit and open back.
-                        </li>
-                        <li class="product__specifications-item">
-                            Stretchy lace.
-                        </li>
-                        <li class="product__specifications-item">
-                            Pull on styling.
-                        </li>
-                        <li class="product__specifications-item">
-                            Comes double lined.
-                        </li>
-                        <li class="product__specifications-item">
-                            Material: 95% polyester, 5% elastane
-                        </li>
-                        <li class="product__specifications-item">
-                            Machine wash, no warmer than 30°C
-                        </li>
-                    </ul>
-                </div>
+                            <a href="product.html" class="product-card__link"></a>
+                        </article>
+                    </li>
+                    <li class="product__recommend-item">
+                        <article class="product-card">
+                            <div class="product-card__imgs">
+                                <img src="img/product/1.webp" alt="" class="product-card__img">
+                                <img src="img/product/2.webp" alt="" class="product-card__img">
+                            </div>
+                            <div class="product-card__body">
+                                <h3 class="product-card__title">Sandales</h3>
+                                <div class="product-card__price">2000 €</div>
+                            </div>
+                            <a href="product.html" class="product-card__link"></a>
+                        </article>
+                    </li>
+                    <li class="product__recommend-item">
+                        <article class="product-card">
+                            <div class="product-card__imgs">
+                                <img src="img/product/1.webp" alt="" class="product-card__img">
+                                <img src="img/product/2.webp" alt="" class="product-card__img">
+                            </div>
+                            <div class="product-card__body">
+                                <h3 class="product-card__title">Sandales</h3>
+                                <div class="product-card__price">2000 €</div>
+                            </div>
+                            <a href="product.html" class="product-card__link"></a>
+                        </article>
+                    </li>
+                    <li class="product__recommend-item">
+                        <article class="product-card">
+                            <div class="product-card__imgs">
+                                <img src="img/product/1.webp" alt="" class="product-card__img">
+                                <img src="img/product/2.webp" alt="" class="product-card__img">
+                            </div>
+                            <div class="product-card__body">
+                                <h3 class="product-card__title">Sandales</h3>
+                                <div class="product-card__price">2000 €</div>
+                            </div>
+                            <a href="product.html" class="product-card__link"></a>
+                        </article>
+                    </li>
+                </ul>
             </div>
         </section>
     </main>

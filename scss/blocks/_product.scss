@@ -1,13 +1,19 @@
 .product {
     padding-block: var(--section-padding-y);
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    flex-direction: column;
+    row-gap: 50px;
+    
+    &__block {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
 
-    @include mobile {
-        flex-direction: column;
-        row-gap: 30px;
-    }  
+        @include mobile {
+            flex-direction: column;
+            row-gap: 30px;
+        }  
+    }
 
     &__slider {
         flex: 2;
@@ -57,6 +63,7 @@
     &__arrow-button {
         @include square(48px);
         @include flex-center(true);
+
     }
 
     &__info {
@@ -193,6 +200,10 @@
             border-radius: 3px;
             border: 1px solid hsl(0, 0%, 87%);
             background-color: rgb(237, 237, 237);
+
+            @include hover {
+                background-color: rgb(227 227 227);
+            }
         }
     }
 
@@ -231,6 +242,30 @@
                 background-color: #000;
                 border-radius: 50%;
             
+            }
+        }
+    }
+
+    &__recommend {
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+
+        &-list {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+
+            @include mobile {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 40px;
+            }
+        }
+
+        &-title {
+            font-size: 27px;
+
+            @include mobile {
+                font-size: 25px;
             }
         }
     }
