@@ -10,4 +10,8 @@
 	--font-family-base: "Be Vietnam Pro", sans-serif;
 
 	--transition-duration: 0.2s;
+
+	@include mobile {
+		--section-padding-y: 25px;
+	}
 }

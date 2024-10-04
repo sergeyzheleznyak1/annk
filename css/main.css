@@ -96,6 +96,11 @@ legend {
   --font-family-base: "Be Vietnam Pro", sans-serif;
   --transition-duration: 0.2s;
 }
+@media (max-width: 767px) {
+  :root {
+    --section-padding-y: 25px;
+  }
+}
 
 html {
   scroll-behavior: smooth;
@@ -1402,5 +1407,110 @@ html, body {
 @media (max-width: 767px) {
   .product__recommend-title {
     font-size: 25px;
+  }
+}
+
+.about {
+  padding-block: var(--section-padding-y);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: var(--section-padding-y);
+}
+.about__info-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+@media (max-width: 1023px) {
+  .about__info-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 767px) {
+  .about__info-wrapper {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+}
+.about__img {
+  height: 500px;
+  width: 100%;
+  background-color: #d3d3d3;
+}
+.about__banner {
+  height: 200px;
+  width: 100%;
+  background-color: #d3d3d3;
+}
+.about__contact-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 25px;
+  text-align: center;
+}
+.about__contact-title {
+  font-size: 20px;
+  font-weight: 700;
+}
+.about__contact-title:not(:last-child) {
+  margin-bottom: 10px;
+}
+.about__contact-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 5px;
+}
+@media (hover: hover) and (pointer: fine) {
+  .about__contact-link:hover {
+    text-decoration: underline;
+  }
+}
+@media (hover: none) {
+  .about__contact-link:active {
+    text-decoration: underline;
+  }
+}
+.about__inst {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 15px;
+     -moz-column-gap: 15px;
+          column-gap: 15px;
+}
+.about__inst img {
+  width: 25px;
+  aspect-ratio: 1;
+}
+@media (max-width: 767px) {
+  .about__inst {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    row-gap: 15px;
   }
 }/*# sourceMappingURL=main.css.map */
