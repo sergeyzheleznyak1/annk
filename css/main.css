@@ -1049,7 +1049,6 @@ html, body {
   -webkit-box-flex: 2;
       -ms-flex: 2;
           flex: 2;
-  aspect-ratio: 4/5;
   border-radius: 3px;
 }
 @media (max-width: 1280px) {
@@ -1062,6 +1061,11 @@ html, body {
 @media (max-width: 1023px) {
   .product__slider {
     height: auto;
+  }
+}
+@media (min-width: 768px) {
+  .product__slider {
+    aspect-ratio: 4/5;
   }
 }
 @media (max-width: 767px) {

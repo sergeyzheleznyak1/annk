@@ -11,7 +11,6 @@
 
     &__slider {
         flex: 2;
-        aspect-ratio: 4 / 5;
         // height: 100svh;
         border-radius: 3px;
 
@@ -21,6 +20,10 @@
 
         @include tablet-b {
             height: auto;
+        }
+
+        @include mobile-above {
+            aspect-ratio: 4 / 5;
         }
 
         @include mobile {
