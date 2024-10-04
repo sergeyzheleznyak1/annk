@@ -100,10 +100,10 @@
                 <div class="product__action visible-mobile">
                     <div class="swiper-pagination"></div>
                     <div class="product__arrows">
-                        <button class="product__arrow-button-prev">
+                        <button class="product__arrow-button-prev product__arrow-button">
                             <img src="img/icons/arrow-back.svg" alt="">
                         </button>
-                        <button class="product__arrow-button-next">
+                        <button class="product__arrow-button-next product__arrow-button">
                             <img src="img/icons/arrow-forward.svg" alt="">
                         </button>
                     </div>
@@ -135,6 +135,7 @@
                                     <option value="42">42 (EU)</option>
                                 </select>
                             </div>
+                            <!-- Например всплытие модалки по клику с размерами если нужно -->
                             <a href="#!" class="product__size-link">Size guide</a>
                         </div>
                         <div class="product__bottom">
@@ -156,9 +157,10 @@
                     </div>
                     
                     <div class="product__quantity">
-                        <label for="quantity" class="product__quantity-label">Quantity:</label>
+                        <div class="product__quantity-label">Quantity:</div>
                         <div class="product__quantity-inner">
                             <button class="product__quantity-button"><img src="img/icons/remove.svg" alt="" class="product__quantity-icon"></button>
+                            <!-- Если нужно редактировать количество заменить span на input [type: number] -->
                             <span class="product__quantity-count">1</span>
                             <button class="product__quantity-button"><img src="img/icons/add.svg" alt="" class="product__quantity-icon"></button>
                         </div>
@@ -166,6 +168,29 @@
                 </div>
 
                 <a href="#!" class="product__button-bag">Add to cart</a>
+
+                <div class="product__specifications">
+                    <ul class="product__specifications-list">
+                        <li class="product__specifications-item">
+                            Perfect mob wife midi dress with leg slit and open back.
+                        </li>
+                        <li class="product__specifications-item">
+                            Stretchy lace.
+                        </li>
+                        <li class="product__specifications-item">
+                            Pull on styling.
+                        </li>
+                        <li class="product__specifications-item">
+                            Comes double lined.
+                        </li>
+                        <li class="product__specifications-item">
+                            Material: 95% polyester, 5% elastane
+                        </li>
+                        <li class="product__specifications-item">
+                            Machine wash, no warmer than 30°C
+                        </li>
+                    </ul>
+                </div>
             </div>
         </section>
     </main>
@@ -185,5 +210,6 @@
     <script src="js/libs/swiper-bundle.min.js"></script>
     <script src="js/index.js" type="module"></script>
     <script src="js/swiper.js"></script>
+    <script src="js/quantity.js"></script>
 </body>
 </html>
