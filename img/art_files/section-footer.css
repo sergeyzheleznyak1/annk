@@ -1,0 +1,22 @@
+.footer__localization {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.footer__localization .social-icons {
+  margin: 0.5rem 0.75rem 0 0;
+}
+
+.footer__localization .social-icons li {
+  margin: unset;
+}
+
+.footer__localization .social-icons a {
+  padding: 0.5rem;
+}
+
+.footer__localization .social-icons,
+.footer__localization .social-icons a {
+  display: flex;
+}

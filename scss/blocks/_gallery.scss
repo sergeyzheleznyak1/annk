@@ -1,0 +1,25 @@
+.gallery {
+    padding-block: var(--section-padding-y);
+    display: flex;
+    flex-direction: column;
+    row-gap: 25px;
+
+    &__title {
+        font-size: 20px;
+        // font-weight: 700;
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 25px;
+
+        @include tablet-b {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include mobile {
+            grid-template-columns: 1fr;
+        }
+    }
+}

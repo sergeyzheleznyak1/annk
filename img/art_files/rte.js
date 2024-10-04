@@ -1,0 +1,2 @@
+document.addEventListener("alpine:init",()=>{Alpine.data("RTE",()=>({init(){this.$root.querySelectorAll("table").forEach(tableEl=>{wrap(tableEl).classList.add("rte__table")}),this.$root.querySelectorAll('iframe[src*="youtube.com"],iframe[src="vimeo"]').forEach(extVideoEl=>{wrap(extVideoEl).classList.add("rte__external-video")})}}))});
+//# sourceMappingURL=/cdn/shop/t/2/assets/rte.js.map?v=91144393696501258891722327238

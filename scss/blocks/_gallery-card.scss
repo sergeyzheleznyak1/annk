@@ -1,0 +1,44 @@
+.gallery-card {
+    --column-gap: 5px;
+
+    position: relative;
+    transition: column-gap var(--transition-duration) ease-in-out;
+
+    &__link {
+        position: absolute;
+        inset: 0;
+    }
+
+    @include hover {
+        --column-gap: 15px;
+    }
+
+    &__body {
+        padding: 32px var(--container-padding-x);
+        display: flex;
+        flex-direction: column;
+        row-gap: 16px;
+    }
+
+    &__headline {
+        display: flex;
+        flex-direction: column;
+        row-gap: 8px;
+
+        time {
+            font-size: 14px;
+            color: #686363;
+        }
+    }
+
+    &__title {
+        font-size: 1.25rem;
+    }
+    
+    &__body-link {
+        display: flex;
+        align-items: center;
+        column-gap: var(--column-gap);
+        font-size: 14px;
+    }
+}

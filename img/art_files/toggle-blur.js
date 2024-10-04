@@ -1,0 +1,2 @@
+(function(){document.querySelectorAll('.header__nav-wrapper [aria-controls="menu0"]').forEach(el=>{document.addEventListener("click",e=>{e.composedPath().includes(el)?(el.classList.toggle("btn--active"),document.body.classList.toggle("backgdrop-blur--active")):(el.classList.remove("btn--active"),document.body.classList.remove("backgdrop-blur--active"))})})})();
+//# sourceMappingURL=/cdn/shop/t/2/assets/toggle-blur.js.map?v=149452500514060885021722327238

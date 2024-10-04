@@ -1,0 +1,2 @@
+document.addEventListener("alpine:init",()=>{Alpine.data("CartNote",()=>({updating:!1,note:"",init(){this.note=this.$root.value,this.$watch("note",(value,oldValue)=>{value!==oldValue&&this.updateNote()})},async updateNote(){this.updating=!0,await fetch(theme.routes.cart_update_url,{...fetchConfigDefaults(),body:JSON.stringify({note:this.$root.value})}),this.updating=!1}}))});
+//# sourceMappingURL=/cdn/shop/t/2/assets/cart-note.js.map?v=17283974488463093931722327237
