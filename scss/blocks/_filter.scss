@@ -94,7 +94,7 @@
             align-items: center;
             height: 10px;
             aspect-ratio: 1;
-            background: url('../../img/icons/arrow-down.svg') center/contain no-repeat;
+            background: url('../img/icons/arrow-down.svg') center/contain no-repeat;
             transition: rotate var(--transition-duration) ease-in-out;
             rotate: var(--rotate);
         }

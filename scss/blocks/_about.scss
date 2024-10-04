@@ -71,6 +71,12 @@
             @include square(25px);
         }
 
+        span a {
+            @include hover {
+                text-decoration: underline;
+            }
+        }
+
         @include mobile {
             justify-content: center;
             flex-direction: column;

@@ -270,7 +270,7 @@ html, body {
           align-items: center;
   height: 10px;
   aspect-ratio: 1;
-  background: url("../../img/icons/arrow-down.svg") center/contain no-repeat;
+  background: url("../img/icons/arrow-down.svg") center/contain no-repeat;
   rotate: var(--rotate);
 }
 .has-submenu ul {
@@ -606,7 +606,7 @@ html, body {
           align-items: center;
   height: 16px;
   aspect-ratio: 1;
-  background: url("../../img/icons/arrow-forward.svg") center/contain no-repeat;
+  background: url("../img/icons/arrow-forward.svg") center/contain no-repeat;
   opacity: 0;
 }
 @media (hover: hover) and (pointer: fine) {
@@ -854,7 +854,7 @@ html, body {
           align-items: center;
   height: 10px;
   aspect-ratio: 1;
-  background: url("../../img/icons/arrow-down.svg") center/contain no-repeat;
+  background: url("../img/icons/arrow-down.svg") center/contain no-repeat;
   -webkit-transition: rotate var(--transition-duration) ease-in-out;
   transition: rotate var(--transition-duration) ease-in-out;
   rotate: var(--rotate);
@@ -1501,6 +1501,16 @@ html, body {
 .about__inst img {
   width: 25px;
   aspect-ratio: 1;
+}
+@media (hover: hover) and (pointer: fine) {
+  .about__inst span a:hover {
+    text-decoration: underline;
+  }
+}
+@media (hover: none) {
+  .about__inst span a:active {
+    text-decoration: underline;
+  }
 }
 @media (max-width: 767px) {
   .about__inst {
