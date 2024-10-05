@@ -40,5 +40,10 @@
         align-items: center;
         column-gap: var(--column-gap);
         font-size: 14px;
+
+        img {
+            @include square(20px);
+        }
     }
+
 }

@@ -27,7 +27,7 @@
                     <li class="header__menu-item">
                         <a href="#!" class="header__menu-link">Contacts</a>
                     </li>
-                    <li class="header__menu-item has-submenu">
+                    <li class="header__menu-item has-submenu has-submenu--desktop">
                         <a href="#!" class="header__menu-link">Shop</a>
                         <ul class="header__menu-submenu">
                             <li class="header__menu-submenu-item">
@@ -60,7 +60,7 @@
            </button>
             <a href="#!" class="header__logo">/aenk:ei/</a>
             <div class="header__language-cart">
-                <nav class="header__language hidden-mobile has-submenu">
+                <nav class="header__language hidden-mobile has-submenu has-submenu--desktop">
                     <button class="header__language-button" aria-haspopup="listbox" aria-expanded="false">EN</button>
                     <ul class="header__language-list ">
                         <li class="header__language-item" role="option" tabindex="0" data-lang="pl">
@@ -111,6 +111,33 @@
             </div>
         </section>
     </main>
+    <div class="mobile-overlay" id="mobileOverlay" role="dialog" aria-hidden="true">
+		<div class="mobile-overlay__close-button-wrapper">
+			<button class="mobile-overlay__close-button" type="button" id="closeMobileMenuBtn">
+				<span class="visually-hidden">Close navigation menu</span>
+                <img src="img/icons/close.svg" alt="">
+			</button>
+		</div>
+		<div class="mobile-overlay__body">
+			<ul class="mobile-overlay__list">
+				<li class="mobile-overlay__item">
+					<a class="mobile-overlay__link" href="#!">About us</a>
+				</li>
+				<li class="mobile-overlay__item">
+					<a class="mobile-overlay__link" href="#!">Services</a>
+				</li>
+				<li class="mobile-overlay__item">
+					<a class="mobile-overlay__link" href="#!">Use Cases</a>
+				</li>
+				<li class="mobile-overlay__item">
+					<a class="mobile-overlay__link" href="#!">Pricing</a>
+				</li>
+				<li class="mobile-overlay__item">
+					<a class="mobile-overlay__link" href="#!">Blog</a>
+				</li>
+			</ul>
+		</div>
+	</div>
     <div class="bag">
         <header class="bag__header">
             <div class="bag__close-wrapper">

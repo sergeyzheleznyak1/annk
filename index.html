@@ -27,9 +27,9 @@
                     <li class="header__menu-item">
                         <a href="#!" class="header__menu-link">Contacts</a>
                     </li>
-                    <li class="header__menu-item has-submenu">
+                    <li class="header__menu-item has-submenu has-submenu--desktop">
                         <a href="#!" class="header__menu-link">Shop</a>
-                        <ul class="header__menu-submenu">
+                        <ul class="header__menu-submenu ">
                             <li class="header__menu-submenu-item">
                                 <a href="catalog.html" class="header__menu-submenu-link">All</a>
                             </li>
@@ -60,16 +60,15 @@
            </button>
             <a href="#!" class="header__logo">/aenk:ei/</a>
             <div class="header__language-cart">
-                <nav class="header__language hidden-mobile has-submenu">
+                <nav class="header__language hidden-mobile has-submenu has-submenu--desktop">
                     <button class="header__language-button" aria-haspopup="listbox" aria-expanded="false">EN</button>
-                    <ul class="header__language-list ">
+                    <ul class="header__language-list">
                         <li class="header__language-item" role="option" tabindex="0" data-lang="pl">
-                            <a rel="alternate" href="#" hreflang="pl" lang="pl" class="header__language-link" >PL</a>
+                            <a rel="alternate" href="#" hreflang="pl" lang="pl" class="header__language-link">PL</a>
                         </li>
                         <li class="header__language-item" role="option" tabindex="0" data-lang="de">
                             <a rel="alternate" href="#" hreflang="de" lang="de" class="header__language-link">DE</a>
                         </li>
-                        
                     </ul>
                 </nav>
                 <button class="header__cart">
@@ -89,6 +88,53 @@
         </section>
     </main>
     <footer class="footer"></footer>
+    <div class="mobile-overlay" id="mobileOverlay" role="dialog" aria-hidden="true">
+		<div class="mobile-overlay__close-button-wrapper">
+			<button class="mobile-overlay__close-button" type="button" id="closeMobileMenuBtn">
+				<span class="visually-hidden">Close navigation menu</span>
+                <img src="img/icons/close.svg" alt="">
+			</button>
+		</div>
+		<div class="mobile-overlay__body">
+			<ul class="mobile-overlay__list">
+				<li class="mobile-overlay__item">
+					<a class="mobile-overlay__link" href="about.html">About us</a>
+				</li>
+				<li class="mobile-overlay__item">
+					<a class="mobile-overlay__link" href="#!">Gallery</a>
+				</li>
+				<li class="mobile-overlay__item">
+					<a class="mobile-overlay__link" href="#!">Contacts</a>
+				</li>
+				<li class="mobile-overlay__item has-submenu has-submenu--mobile">
+					<a class="mobile-overlay__link" href="#!">Shop</a>
+                    <ul class="mobile-overlay__submenu">
+                        <li class="mobile-overlay__submenu-item">
+                            <a href="catalog.html" class="mobile-overlay__submenu-link">All</a>
+                        </li>
+                        <li class="mobile-overlay__submenu-item">
+                            <a href="#!" class="mobile-overlay__submenu-link">New</a>
+                        </li>
+                        <li class="mobile-overlay__submenu-item">
+                            <a href="#!" class="mobile-overlay__submenu-link">Bestsellers</a>
+                        </li>
+                        <li class="mobile-overlay__submenu-item">
+                            <a href="#!" class="mobile-overlay__submenu-link">Heels</a>
+                        </li>
+                        <li class="mobile-overlay__submenu-item">
+                            <a href="#!" class="mobile-overlay__submenu-link">Mules</a>
+                        </li>
+                        <li class="mobile-overlay__submenu-item">
+                            <a href="#!" class="mobile-overlay__submenu-link">Boots</a>
+                        </li>
+                        <li class="mobile-overlay__submenu-item">
+                            <a href="#!" class="mobile-overlay__submenu-link">Fur heels</a>
+                        </li>
+                    </ul>
+				</li>
+			</ul>
+		</div>
+	</div>
     <div class="bag">
         <header class="bag__header">
             <div class="bag__close-wrapper">

@@ -1,0 +1,57 @@
+.mobile-overlay {
+    position: fixed;
+    inset: 0;
+    padding-inline: var(--container-padding-x);
+    background-color: #fff;
+    translate: 0 -100%;
+    transition: translate var(--transition-duration) ease;
+    pointer-events: none;
+    z-index: 1000;
+    overflow-y: auto;
+
+    &--open {
+        translate: 0 0;
+        pointer-events: all;
+    }
+
+    &__close-button-wrapper {
+        padding-block: 20px;
+        display: flex;
+        justify-content: end;
+    }
+
+    &__close-button {
+        @include square(48px);
+        @include flex-center;
+    }
+
+    &__list {
+        @include flex-center;
+
+        flex-direction: column;
+        row-gap: 15px;
+        // min-height: 80lvh;
+    }
+
+    &__item {
+        width: 100%;
+        border-bottom: 1px solid #f1f1f1;
+    }
+
+    &__link {
+        display: inline-flex;
+        align-items: center;
+        height: 40px;
+        
+    }
+    &__submenu {
+        padding: 15px;
+
+        &-link {
+            display: inline-flex;
+            align-items: center;
+            width: 100%;
+            height: 40px;
+        }
+    }
+}   

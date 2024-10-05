@@ -7,11 +7,21 @@
     --pointer-events: none;
 
     position: relative;
-    display: flex;
+    display: inline-flex;
     justify-content: flex-start;
     align-items: center;
     column-gap: 10px;
     cursor: pointer;
+    grid-area: link;
+
+    &.active {
+        --opacity: 1;
+        --visibility: visible;
+        --translateX: translateX(0);
+        --pointer-events: all;
+        --rotate: 180deg;
+        --display: block;
+    }
 
     @include hover {
         --opacity: 1;
@@ -19,38 +29,65 @@
         --translateX: translateX(0);
         --pointer-events: all;
         --rotate: 180deg;
-
+        --display: block;
     }
 
     &::after {
         content: '';
-        display: flex;
+        display: inline-flex;
         justify-content: center;
         align-items: center;
         height: 10px;
         aspect-ratio: 1;
         background: url('../img/icons/arrow-down.svg') center/contain no-repeat;
         rotate: var(--rotate);
+        grid-area: arrow;
     }
 
-    ul {
-        position: absolute;
-        top: 100%;
-        background-color: #fafafa;
-        border-radius: 3px;
-        opacity: var(--opacity);
-        visibility: var(--visibility);
-        transform: var(--translateX);
-        pointer-events: var(--pointer-events);
-        transition-property: opacity, visibility, transform, rotate;
-        z-index: 200;
-    }
-
-    ul a {
-        @include hover {
-            background-color: #dfdfdf;
+    &--desktop {
+        ul {
+            position: absolute;
+            top: 100%;
+            background-color: #fafafa;
+            border-radius: 3px;
+            opacity: var(--opacity);
+            visibility: var(--visibility);
+            transform: var(--translateX);
+            pointer-events: var(--pointer-events);
+            transition-property: opacity, visibility, transform, rotate;
+            z-index: 200;
+        }
+    
+        ul a {
+            @include hover {
+                background-color: #dfdfdf;
+            }
         }
     }
+
+    &--mobile{
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-template-areas:
+                "link arrow"
+                "submenu submenu";
+        ul {
+            grid-area: submenu;
+            display: var(--display);
+            // opacity: var(--opacity);
+            // visibility: var(--visibility);
+            // transition-property: opacity, visibility, rotate;
+            pointer-events: var(--pointer-events);
+
+            a {
+                @include hover {
+                    background-color: #dfdfdf;
+                }
+            }
+        }
+    }
+
+    
 
     &::after,
     & ul,
